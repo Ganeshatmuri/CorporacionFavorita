@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>Corporación User Sales </title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+
+    <!-- Bootstrap CSS -->
+	<link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+    <!-- Site CSS -->
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' />
+    <!-- Responsive CSS -->
+	<link href="{{ url_for('static', filename='css/responsive.css') }}" rel='stylesheet' type='text/css' />
+
+    <!-- Custom CSS -->
+	<link href="{{ url_for('static', filename='css/custom.css') }}" rel='stylesheet' type='text/css' />
+
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Start Main Top -->
+    <header class="main-header">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                </button>
+                    <a class="navbar-brand" href="index.html"><img src="{{ url_for('static',filename='images/logo.png')}}" class="logo" alt=""></a>
+                </div>
+                <!-- End Header Navigation -->
+                <!-- End Atribute Navigation -->
+            </div>
+            <!-- Start Side Menu -->
+
+            <!-- End Side Menu -->
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Main Top -->
+
+    <!-- Start Top Search -->
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Search -->
+
+    <!-- Start Slider -->
+    <div id="slides-shop" class="cover-slides">
+        <ul class="slides-container">
+            <li class="text-center">
+                <img src="{{ url_for('static',filename='images/banner-01.jpg')}}" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Corporación Favorita</strong></h1>
+                            <p class="m-b-40">We predict the sales based on the Date and Items Selected</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{{ url_for('static',filename='images/banner-02.jpg')}}" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20"><strong>Corporación Favorita</strong></h1>
+                            <p class="m-b-40">We predict the sales based on the Store Number and Family Type Selected</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="text-center">
+                <img src="{{ url_for('static',filename='images/banner-03.jpg')}}" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="m-b-20" ><strong>Corporación Favorita</strong></h1>
+                            <p class="m-b-40">We predict the sales based on the Store Number and Family Type Selected</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="slides-navigation">
+            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <!-- End Slider -->
+
+    <!-- Prediction Form -->
+
+<!--Form Section-->
+
+
+<!--Form Section-->
+
+<div
+  style="
+    width: 350px;
+    height: 50rem;
+    margin: 0px auto;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 10px;
+  "
+>
+  <form method="POST" action="{{ url_for('predict') }}">
+    <div class="form-group">
+	<label for="Date" style="font-size: 17px"><b>Date</b></label>
+                            <!-- Departure -->
+							<br>
+                            <input type="date" name="Date" id="Date"         style="font-weight: bold"
+required="required">
+								  <br>
+								  	  <label for="city" style="font-size: 17px"><b>City</b></label>
+	  <br>
+		<select class="form-control" style="font-weight: bold; color: black;" name="city">
+                        <option value="none">--- Select City ---</option>
+                        <option value="c_Quito">Quito</option>
+                        <option value="c_Cayambe">Cayambe</option>
+                        <option value="c_Cuenca">Cuenca</option>
+                        <option value="c_Ambato">Ambato</option>
+                        <option value="c_Daule">Daule</option>
+                        <option value="c_Loja">Loja</option>
+                        <option value="c_Manta">Manta</option>
+						<option value="c_Babahoyo">Babahoyo</option>
+						<option value="c_Libertad">Libertad</option>
+						<option value="Esmeraldas">Esmeraldas</option>
+                    </select><br>
+		<br>	
+		
+      <label for="store_nbr" style="font-size: 17px"><b>Store Number</b></label>
+	  <br>
+	  
+		<select class="form-control" style="font-weight: bold; color: black;" name="store_nbr">
+                        <option value="none">--- Select Store Number ---</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="20">20</option>
+                        <option value="23">23</option>
+						<option value="27">27</option>
+						<option value="31">31</option>
+						<option value="36">36</option>
+						<option value="37">37</option>
+						<option value="38">38</option>
+						<option value="39">39</option>
+						<option value="42">42</option>
+						<option value="43">43</option>
+						<option value="44">44</option>
+                        <option value="45">45</option>
+                        <option value="46">46</option>
+                        <option value="47">47</option>
+						<option value="48">48</option>
+						<option value="49">49</option>
+						
+                        
+                        
+                        
+                        <option value="50">50</option>
+                                               <option value="52">52</option>
+
+                        
+						<option value="53">53</option>
+						
+						
+						
+					
+                    </select><br>
+		<br>	                      <table>
+  <tr>
+    <th>City</th>
+    <th>Store Number</th>
+  </tr>
+  <tr>
+    <td>Quito</td>
+    <td>&emsp; &emsp;&emsp; 1, 2, 3, 4, 6, 7, 8, 9, 10, 17, 18, 20, 44, 45,&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 46, 47, 48, 49</td>
+  </tr>
+  <tr>
+    <td>Cayambe</td>
+    <td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;11</td>
+  </tr>
+  <tr>
+    <td>Cuenca</td>
+    <td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;37, 39, 42</td>
+  </tr>
+  <tr>
+    <td>Ambato</td>
+    <td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;50</td>
+  </tr>
+  <tr>
+    <td>Daule</td>
+    <td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;27</td>
+  </tr>
+  <tr>
+    <td>Loja</td>
+    <td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;38</td>
+	 </tr>
+  <tr>
+    <td>Manta</td>
+    <td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;52, 53</td>
+  </tr>
+   </tr>
+  <tr>
+    <td>Babhoyo</td>
+    <td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;31</td>
+  </tr>
+   </tr>
+  <tr>
+    <td>Libertad</td>
+    <td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;36</td>
+  </tr>
+   </tr>
+  <tr>
+    <td>Esmeraldas</td>
+    <td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;43</td>
+  </tr>
+  </tr>
+</table> 
+<br>
+
+	  <label for="Family" style="font-size: 17px"><b>Family Type</b></label>
+	  <br>
+
+	  <select class="form-control" style="font-weight: bold; color: black;" name="family">
+                        <option value="none">--- Select a Family Type ---</option>
+                        <option value="GROCERY I">GROCERY I</option>
+                        <option value="PRODUCE">PRODUCE</option>
+                        <option value="BEVERAGES">BEVERAGES</option>
+                        <option value="CLEANING">CLEANING</option>
+                        <option value="POULTRY">POULTRY</option>
+                        <option value="MEATS">MEATS</option>
+                        <option value="BREAD/BAKERY">BREAD/BAKERY</option>
+                        <option value="DAIRY">DAIRY</option>
+						<option value="DELI">DELI</option>
+						<option value="PERSONAL CARE">PERSONAL CARE</option>
+                    </select><br>
+
+
+
+	  
+    </div>
+	
+    <br>
+    <div class="d-flex justify-content-center">
+      <button
+        type="submit"
+        class="btn btn-info"
+        style="color: black; font-weight: bold; width: 130px; height:30px; border-radius:12px; font-size: 21px;"
+      >
+        Predict
+      </button>
+    </div>
+  </form>
+</div>
+
+
+
+    <!-- ALL JS FILES -->
+	<script type="text/JavaScript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+	<script type="text/JavaScript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+	<script type="text/JavaScript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+
+	<script type="text/JavaScript" src="{{ url_for('static', filename='js/jquery.superslides.min.js') }}"></script>
+	<script type="text/JavaScript" src="{{ url_for('static', filename='js/bootstrap-select.js') }}"></script>
+	<script type="text/JavaScript" src="{{ url_for('static', filename='js/inewsticker.js') }}"></script>
+	<script type="text/JavaScript" src="{{ url_for('static', filename='js/bootsnav.js.') }}"></script>
+	<script type="text/JavaScript" src="{{ url_for('static', filename='js/images-loded.min.js') }}"></script>
+	<script type="text/JavaScript" src="{{ url_for('static', filename='js/isotope.min.js') }}"></script>
+	<script type="text/JavaScript" src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+	<script type="text/JavaScript" src="{{ url_for('static', filename='js/form-validator.min.js') }}"></script>
+	<script type="text/JavaScript" src="{{ url_for('static', filename='js/baguetteBox.min.js') }}"></script>
+	<script type="text/JavaScript" src="{{ url_for('static', filename='js/contact-form-script.js') }}"></script>
+	<script type="text/JavaScript" src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+</body>
+
+</html>
